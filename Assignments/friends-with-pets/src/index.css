@@ -1,0 +1,41 @@
+body{
+    background-color: turquoise;
+}
+
+.header{
+    font-size: 40px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.friendDiv{
+    background-color: palegreen;
+    border-style: solid;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
+    width: 400px;
+}
+
+.name{
+    font-size: 20px;
+    font-weight: bold;
+    background-color: peachpuff;
+}
+
+.age{
+    font-size: 15px;
+}
+
+.petsHeader{
+    font-size: 15px;
+    font-weight: bold;
+    text-transform: uppercase;
+    background-color: violet;
+}
+
+.pets{
+    font-size: 15px;
+}
