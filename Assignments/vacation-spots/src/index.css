@@ -1,0 +1,80 @@
+body{
+    background-color: turquoise;
+    text-align: center;
+}
+
+#title{
+    text-align: center;
+    font-size: 40px;
+    text-transform: uppercase;
+    background-color: fuchsia;
+    height: 50px;
+    width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.timeDiv{
+    border-style: solid;
+    text-align: center;
+    background-color: peachpuff;
+    font-size: 20px;
+    width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.headerThree{
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.white{
+    background-color: white;
+    width: 200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.green{
+    background-color: limegreen;
+    width: 200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.yellow{
+    background-color: yellow;
+    width: 200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.orange{
+    background-color: #FA8F04;
+    width: 200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.vacationDiv{
+    text-align: center;
+}
+
+.eachSpot{
+    border-style: solid;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.spotDestination{
+    font-size: 25px;
+}
+
+.spotPrice{
+    font-size: 20px;
+}
