@@ -2,6 +2,7 @@
     background-image: url(https://startbootstrap.github.io/startbootstrap-clean-blog/img/home-bg.jpg);
     background-size: auto;
     height: 500px;
+    padding-top: 15px;
 }
 
 .navBar{
@@ -13,7 +14,7 @@
 }
 
 .floatLeft{
-    margin-left: 300px;
+    margin-left: 400px;
 }
 
 .floatRight{
