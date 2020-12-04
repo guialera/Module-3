@@ -61,7 +61,7 @@ class App extends React.Component {
     limegreenChange(){
         this.setState(prevState => {
             return{
-                boxColors: ["limegreen", prevState.boxColors[1], prevState.boxColors[2], "limegreen"]
+                boxColors: ["limegreen", prevState.boxColors[1], prevState.boxColors[2], prevState.boxColors[3]]
             }
         })
     }
@@ -69,7 +69,7 @@ class App extends React.Component {
     yellowChange(){
         this.setState(prevState => {
             return{
-                boxColors: [prevState.boxColors[0], prevState.boxColors[1], "yellow", "yellow"]
+                boxColors: [prevState.boxColors[0], "yellow", prevState.boxColors[2], prevState.boxColors[3]]
             }
         })
     }
@@ -77,7 +77,7 @@ class App extends React.Component {
     orangeChange(){
         this.setState(prevState => {
             return{
-                boxColors: [prevState.boxColors[0], "orange", prevState.boxColors[2], "orange"]
+                boxColors: [prevState.boxColors[0], prevState.boxColors[1], "orange", prevState.boxColors[3]]
             }
         })
     }
@@ -85,7 +85,7 @@ class App extends React.Component {
     randomColorChange(){
         this.setState(prevState => {
             return{
-                boxColors: ["aqua", "hotpink", prevState.boxColors[2], "magenta"]
+                boxColors: [prevState.boxColors[0], prevState.boxColors[1], prevState.boxColors[2], "magenta"]
             }
         })
     }
