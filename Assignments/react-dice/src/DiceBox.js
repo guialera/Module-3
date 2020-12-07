@@ -139,8 +139,8 @@ class DiceBox extends React.Component {
     }
 
     checked(id) {
-        console.log(id)
-        console.log(this.state.numbers)
+        /*console.log(id)*/
+        /*console.log(this.state.numbers)*/
         const markedArr = this.state.numbers.map(function (each) {
             if (each.id === id) {
                 each.checked = !each.checked
@@ -197,8 +197,8 @@ class DiceBox extends React.Component {
     randomNumber() {
         /*console.log(this.state.count)*/
         let tallyCount = (this.state.count + 1)
-        console.log(tallyCount)
-        console.log(this.state.numbers)
+        /*console.log(tallyCount)*/
+        /*console.log(this.state.numbers)*/
         const originalNumbersArr = [
             { id: "num1", value: 0, checked: false },
             { id: "num2", value: 0, checked: false },
@@ -207,7 +207,7 @@ class DiceBox extends React.Component {
             { id: "num5", value: 0, checked: false },
         ]
         if (tallyCount < 4) {
-            console.log("if statement works")
+            /*console.log("if statement works")*/
             this.setState(prevState => {
                 const updatedNumbersArr = prevState.numbers.map(function (single) {
                     if (single.checked === false) {
@@ -244,7 +244,7 @@ class DiceBox extends React.Component {
                 count: tallyCount //
             })*/
         } else {
-            console.log("this else works")
+            /*console.log("this else works")*/
             this.setState({
                 numbers: originalNumbersArr,
                 count: 0
@@ -255,7 +255,7 @@ class DiceBox extends React.Component {
                 num5: { value: 0, checked: false },
                 count: 0,*/
             })
-            console.log("This has been executed!")
+            /*console.log("This has been executed!")*/
         }
     }
 
