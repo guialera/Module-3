@@ -141,27 +141,35 @@ class DiceBox extends React.Component {
     checked(id) {
         /*console.log(id)*/
         /*console.log(this.state.numbers)*/
-        const markedArr = this.state.numbers.map(function (each) {
+        /*const markedArr = this.state.numbers.map(function (each) {
             if (each.id === id) {
-                each.checked = !each.checked
+                return{
+                    ...each,
+                    checked: !each.checked
+                }
+                /*each.checked = !each.checked//
             } return each
         })
 
         this.setState({
             numbers: markedArr
-        })
+        })*/
 
-        /*this.setState(prevState =>{
+        this.setState(prevState =>{
             const checkedValue = prevState.numbers.map(function (each) {
                 if (each.id === id) {
-                    each.checked = !each.checked   
+                    return{
+                        ...each,
+                        checked: !each.checked
+                    }
+                    /*each.checked = !each.checked*/  
                 }
                 return each
             })
             return {
                 numbers: checkedValue
             }
-        })*/
+        })
 
         /*if (id === 1) {
             console.log("this works also")
@@ -190,9 +198,9 @@ class DiceBox extends React.Component {
         }*/
     }
 
-    status() {
+    /*status() {
         console.log(this.state.num1)
-    }
+    }*/
 
     randomNumber() {
         /*console.log(this.state.count)*/
@@ -211,9 +219,17 @@ class DiceBox extends React.Component {
             this.setState(prevState => {
                 const updatedNumbersArr = prevState.numbers.map(function (single) {
                     if (single.checked === false) {
-                        single.value = Math.floor(Math.random() * 6)
+                        return{
+                            ...single,
+                            value: Math.floor(Math.random() * 6) 
+                        }
+                        /*single.value = Math.floor(Math.random() * 6)*/
                     } else if (single.checked === true) {
-                        single.value = single.value
+                        return{
+                            ...single,
+                            value: single.value
+                        }
+                        /*single.value = single.value*/
                     } return single
                 })
                 return {
