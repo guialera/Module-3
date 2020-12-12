@@ -24,6 +24,7 @@ class App extends React.Component {
             phone: "",
             favFood: "",
             About: "",
+            badgeArr: []
         }
 
         this.submitInfo = this.submitInfo.bind(this)
@@ -33,7 +34,7 @@ class App extends React.Component {
     fillIn(event) {
         console.log("This is working!")
         const { name, value } = event.target
-        
+
         this.setState({
             /*person: {
                 [name]: value
@@ -63,7 +64,20 @@ class App extends React.Component {
         console.log("This Works")
         console.log(this.state)
 
-        let eachBadge = this.state
+        /*let eachBadge = this.state
+        allBadges.push(eachBadge)*/
+
+        let eachBadge =
+        {
+            firstName: this.state.firstName,
+            lastName: this.state.lastName,
+            email: this.state.email,
+            placeOfBirth: this.state.placeOfBirth,
+            phone: this.state.phone,
+            favFood: this.state.favFood,
+            About: this.state.About
+        }
+
         allBadges.push(eachBadge)
 
         /*const { name, value } = event.target*/
@@ -86,13 +100,15 @@ class App extends React.Component {
             placeOfBirth: "",
             phone: "",
             favFood: "",
-            About: ""
+            About: "",
+            badgeArr: allBadges
         })
 
     }
 
     render() {
-        const people = allBadges.map(function (each) {
+        const list = this.state.badgeArr
+        const people = list.map(function (each) {
             return (
                 <Badge
                     data={each}
