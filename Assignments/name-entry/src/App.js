@@ -2,15 +2,16 @@ import React from "react"
 
 import NameList from "./NameList"
 
-import listedNames from "./list"
+/*import listedNames from "./list"
 
-let newList = []
+let newList = []*/
 
 class App extends React.Component {
     constructor() {
         super()
         this.state = {
-            people: listedNames
+            people: "",
+            list: []
         }
 
         this.nameInput = this.nameInput.bind(this)
@@ -43,16 +44,27 @@ class App extends React.Component {
     submitName(event) {
         event.preventDefault()
 
-        console.log(this.state.people)
+        /*console.log(this.state.people)
+        console.log(this.state.list)*/
 
-        let newPerson = this.state.people
+        /*let newPerson = this.state.people
         newList.push(newPerson)
 
-        console.log(newList)
+        console.log(newList)*/
 
-        this.setState({
-            people: ""
+        this.setState(prevState => {
+            let newPerson = prevState.people
+            let updatedList = prevState.list
+            updatedList.push(newPerson)
+            return {
+                people: "",
+                list: updatedList
+            }
         })
+
+        /*this.setState({
+            people: ""
+        })*/
 
         /*const person = event.target.people.value
         this.setState(prevState => {
@@ -69,7 +81,8 @@ class App extends React.Component {
 
 
     render() {
-        const listedNames = newList.map(function (all) {
+        let updated = this.state.list
+        const listedNames = updated.map(function (all) {
             return (
                 <NameList
                     people={all}
