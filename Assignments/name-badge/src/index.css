@@ -1,0 +1,164 @@
+body{
+    background-color:peachpuff;
+}
+/* Input CSS */
+
+.inputDiv{
+    background-color: aquamarine;
+    border-style: solid;
+    height: 400px;
+    margin-left: 400px;
+    margin-right: 400px;
+}
+
+.header{
+    margin-left: 440px;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+form{
+    display: grid;
+    grid-template-rows: repeat(15, auto);
+    row-gap: 10px;
+    column-gap: 10px;
+    margin-top: 25px;
+    margin-left: 200px;
+    margin-right: 200px;
+}
+
+input.firstName{
+    grid-row: 1/4;
+    border-style: solid;
+    border-color: black;
+}
+
+input.lastName{
+    grid-row: 1/4;
+    border-style: solid;
+    border-color: black;
+}
+
+input.email{
+    grid-row: 4/7;
+    border-style: solid;
+    border-color: black;
+}
+
+input.placeOfBirth{
+    grid-row: 4/7;
+    border-style: solid;
+    border-color: black;
+}
+
+input.phone{
+    grid-row: 7/10;
+    border-style: solid;
+    border-color: black;
+}
+
+input.favFood{
+    grid-row: 7/10;
+    border-style: solid;
+    border-color: black;
+}
+
+textarea{
+    grid-row: 10/13;
+    border: solid 2px;
+}
+
+input.submitButton{
+    grid-row: 13/16;
+}
+
+/* Badge CSS*/
+
+.badgeDiv{
+    display: grid;
+    background-color: fuchsia;
+    border-style: solid;
+    grid-template-rows: repeat(15, auto);
+    font-size: 20px;
+    row-gap: 0px;
+    column-gap: 0px;
+    height:fit-content;
+    margin-top: 75px;
+    margin-left: 400px;
+    margin-right: 400px;
+}
+
+.badgeName{
+    grid-row: 1/4;
+    text-align: center;
+    background-color: turquoise;
+    border-style: solid;
+    width: 400px;
+    margin-left: 350px;
+}
+
+.badgeFirstName{
+    grid-row: 4/7;
+    text-align: center;
+    background-color: turquoise;
+    border-style: solid;
+    width: 250px;
+    margin-left: 200px;
+}
+
+.badgeLastName{
+    grid-row: 4/7;
+    text-align: center;
+    background-color: turquoise;
+    border-style: solid;
+    width: 250px;
+    margin-right: 100px;
+    margin-left: -200px;
+}
+
+.badgeEmail{
+    grid-row:7/10;
+    text-align: center;
+    background-color: turquoise;
+    border-style: solid;
+    width: 250px;
+    margin-left: 200px;
+}
+
+.badgePlaceOfBirth{
+    grid-row: 7/10;
+    text-align: center;
+    background-color: turquoise;
+    border-style: solid;
+    width: 250px;
+    margin-right: 100px;
+    margin-left: -200px;
+}
+
+.badgePhone{
+    grid-row: 10/13;
+    text-align: center;
+    background-color: turquoise;
+    border-style: solid;
+    width: 250px;
+    margin-left: 200px;
+}
+
+.badgeFavFood{
+    grid-row: 10/13;
+    text-align: center;
+    background-color: turquoise;
+    border-style: solid;
+    width: 250px;
+    margin-right: 100px;
+    margin-left: -200px;
+}
+
+.badgeAbout{
+    grid-row: 13/16;
+    border: solid 2px;
+    background-color: turquoise;;
+    width: 550px;
+    height: 200px;
+    margin-left: 275px;
+}
