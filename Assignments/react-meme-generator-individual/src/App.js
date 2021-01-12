@@ -4,9 +4,9 @@ import axios from "axios"
 
 import Memes from "./Memes"
 
-const allSelectedMemes = []
-const placeKeeper = []
-const savedText = []
+/*const allSelectedMemes = []
+const placeKeeper = []*/
+const savedMemeAndText = []
 
 class App extends React.Component {
     constructor() {
@@ -15,10 +15,10 @@ class App extends React.Component {
             list: [],
             memeValue: 0,
             newMeme: [],
-            allMemes: placeKeeper,
+            /*allMemes: placeKeeper,*/
             topText: "",
             bottomText: "",
-            selectedText: savedText
+            selectedMemeAndText: savedMemeAndText
         }
         this.randomNumber = this.randomNumber.bind(this)
         this.selectedMemeText = this.selectedMemeText.bind(this)
@@ -50,7 +50,7 @@ class App extends React.Component {
         console.log(total)*/
     }
 
-    selectedMemeText() {
+    /*selectedMemeText() {
         const selected = this.state.newMeme
         allSelectedMemes.push(selected)
 
@@ -65,6 +65,23 @@ class App extends React.Component {
             topText: "",
             bottomText: "",
             selectedText: savedText
+        })
+    }*/
+
+    selectedMemeText() {
+
+        let allMemeAndText = {
+            topText: this.state.topText,
+            bottomText: this.state.bottomText,
+            memeKey: this.state.newMeme.id,
+            memeUrl: this.state.newMeme.url
+        }
+        savedMemeAndText.push(allMemeAndText)
+
+        this.setState({
+            topText: "",
+            bottomText: "",
+            selectedMemeAndText: savedMemeAndText
         })
     }
 
@@ -86,13 +103,16 @@ class App extends React.Component {
 
     render() {
 
-        let selection = this.state.allMemes
+        let selection = this.state.selectedMemeAndText
+        /*console.log(selection)*/
 
         const updatedData = selection.map(function (each) {
             return (
                 <Memes
-                    key={each.id}
-                    choices={each.url}
+                    key={each.memeKey}
+                    choices={each.memeUrl}
+                    topText={each.topText}
+                    bottomText={each.bottomText}
                 />
             )
         })

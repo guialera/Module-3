@@ -22,3 +22,24 @@ body{
     top: 550px;
     left: 200px
 }
+
+.singleMemeContainer{
+    position: relative;
+    /*text-align: center;*/
+}
+
+.topTextSingleMeme{
+    position: absolute;
+    background-color: white;
+    font-size: 30px;
+    top: 75px;
+    left: 200px;
+}
+
+.bottomTextSingleMeme{
+    position: absolute;
+    background-color: white;
+    font-size: 30px;
+    top: 500px;
+    left: 150px;
+}

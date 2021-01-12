@@ -3,10 +3,13 @@ import React from "react"
 function Memes(props) {
     return (
         <div>
-            <img src={props.choices} width="600" height="600" />
-            <p>Top Text: </p>
-            <p>Bottom Text: </p>
+            <div className="singleMemeContainer">
+                <img src={props.choices} width="600" height="600" />
+                <p className="topTextSingleMeme">{props.topText}</p>
+                <p className="bottomTextSingleMeme">{props.bottomText}</p>
+            </div>
             <button>Edit</button>
+            <button>Delete</button>
         </div>
     )
 }
