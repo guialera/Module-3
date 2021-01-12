@@ -15,6 +15,8 @@ class App extends React.Component {
             list: [],
             memeValue: 0,
             newMeme: [],
+            memeKey: 0,
+            memeUrl: "",
             /*allMemes: placeKeeper,*/
             topText: "",
             bottomText: "",
@@ -23,6 +25,8 @@ class App extends React.Component {
         this.randomNumber = this.randomNumber.bind(this)
         this.selectedMemeText = this.selectedMemeText.bind(this)
         this.fillIn = this.fillIn.bind(this)
+        this.editButton = this.editButton.bind(this)
+        this.deleteButton = this.deleteButton.bind(this)
     }
 
     componentDidMount() {
@@ -101,23 +105,71 @@ class App extends React.Component {
         })
     }
 
+    editButton(choices, topText, bottomText, id) {
+        /*console.log(choices)
+        console.log(topText)
+        console.log(bottomText)
+        console.log(id)*/
+
+        this.setState({
+            newMeme: { url: choices, id: id },
+            topText: topText,
+            bottomText: bottomText
+        })
+
+        this.deleteButton(id)
+    }
+
+    deleteButton(id) {
+        let search = this.state.selectedMemeAndText
+        console.log(id)
+        console.log(search)
+        const index = search.findIndex(x => x.memeKey === id)
+        console.log(index)
+
+        if (index != 0) {
+
+            let erasedMemeAndTextArr = search.splice(1, index)
+            console.log(erasedMemeAndTextArr)
+            console.log(search)
+
+            this.setState({
+                selectedMemeAndText: search
+            })
+        } else if (index === 0){
+            let erasedMemeAndTextArr = search.shift()
+            console.log(erasedMemeAndTextArr)
+            console.log(search)
+
+            this.setState({
+                selectedMemeAndText: search
+            })
+        }
+    }
+
     render() {
 
         let selection = this.state.selectedMemeAndText
-        /*console.log(selection)*/
+        console.log(selection)
+
+        const edit = this.editButton
+        const remove = this.deleteButton
 
         const updatedData = selection.map(function (each) {
             return (
                 <Memes
                     key={each.memeKey}
+                    id={each.memeKey}
                     choices={each.memeUrl}
                     topText={each.topText}
                     bottomText={each.bottomText}
+                    editBtn={edit}
+                    deleteBtn={remove}
                 />
             )
         })
 
-        /*console.log(this.state.newMeme)*/
+        console.log(this.state.newMeme)
         let choosenMeme = this.state.newMeme.url
 
         return (
