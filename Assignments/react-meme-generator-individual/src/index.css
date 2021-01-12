@@ -1,0 +1,24 @@
+body{
+    background-color: aquamarine;
+}
+
+.initialMemeContainer{
+    position: relative;
+    text-align: center;
+}
+
+.topText{
+    position: absolute;
+    background-color: white;
+    font-size: 30px;
+    top: 100px;
+    left: 200px
+}
+
+.bottomText{
+    position: absolute;
+    background-color: white;
+    font-size: 30px;
+    top: 550px;
+    left: 200px
+}
