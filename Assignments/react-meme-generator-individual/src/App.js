@@ -35,6 +35,7 @@ class App extends React.Component {
                 list: response.data.data.memes
             })
             /*console.log(response.data)*/
+            this.randomNumber()
         })
     }
 
@@ -120,23 +121,22 @@ class App extends React.Component {
         this.deleteButton(id)
     }
 
-    deleteButton(id) {
+    /*deleteButton(id) {
         let search = this.state.selectedMemeAndText
         console.log(id)
         console.log(search)
         const index = search.findIndex(x => x.memeKey === id)
         console.log(index)
 
-        if (index != 0) {
-
-            let erasedMemeAndTextArr = search.splice(1, index)
+        if (index !== 0) {
+            let erasedMemeAndTextArr = search.splice(index, 1)
             console.log(erasedMemeAndTextArr)
             console.log(search)
 
             this.setState({
                 selectedMemeAndText: search
             })
-        } else if (index === 0){
+        } else if (index === 0) {
             let erasedMemeAndTextArr = search.shift()
             console.log(erasedMemeAndTextArr)
             console.log(search)
@@ -145,12 +145,28 @@ class App extends React.Component {
                 selectedMemeAndText: search
             })
         }
+    }*/
+
+    deleteButton(id) {
+        let search = this.state.selectedMemeAndText
+        console.log(id)
+        console.log(search)
+        const index = search.findIndex(x => x.memeKey === id)
+        console.log(index)
+
+        let erasedMemeAndTextArr = search.splice(index, 1)
+        console.log(erasedMemeAndTextArr)
+        console.log(search)
+
+        this.setState({
+            selectedMemeAndText: search
+        })
     }
 
     render() {
 
         let selection = this.state.selectedMemeAndText
-        console.log(selection)
+        /*console.log(selection)*/
 
         const edit = this.editButton
         const remove = this.deleteButton
@@ -175,29 +191,31 @@ class App extends React.Component {
         return (
             <div>
                 <h1>React Meme Generator</h1>
-                <div className="intialMemeContainer">
-                    <img src={choosenMeme} height="600" width="600" />
-                    <p className="topText">{this.state.topText}</p>
-                    <p className="bottomText">{this.state.bottomText}</p>
+                <div className="mainInputContainer">
+                    <div className="intialMemeContainer">
+                        <img src={choosenMeme} height="600" width="600" />
+                        <p className="topText">{this.state.topText}</p>
+                        <p className="bottomText">{this.state.bottomText}</p>
+                    </div>
+                    <form>
+                        <input
+                            type="text"
+                            name="topText"
+                            placeHolder="Top Text"
+                            value={this.state.topText}
+                            onChange={this.fillIn}
+                        />
+                        <input
+                            type="text"
+                            name="bottomText"
+                            placeHolder="Bottom Text"
+                            value={this.state.bottomText}
+                            onChange={this.fillIn}
+                        />
+                    </form>
+                    <button onClick={this.randomNumber}>New Meme</button>
+                    <button onClick={this.selectedMemeText}>Select Meme</button>
                 </div>
-                <form>
-                    <input
-                        type="text"
-                        name="topText"
-                        placeHolder="Top Text"
-                        value={this.state.topText}
-                        onChange={this.fillIn}
-                    />
-                    <input
-                        type="text"
-                        name="bottomText"
-                        placeHolder="Bottom Text"
-                        value={this.state.bottomText}
-                        onChange={this.fillIn}
-                    />
-                </form>
-                <button onClick={this.randomNumber}>New Meme</button>
-                <button onClick={this.selectedMemeText}>Select Meme</button>
                 {updatedData}
             </div>
         )

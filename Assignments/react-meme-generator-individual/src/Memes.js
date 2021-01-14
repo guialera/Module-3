@@ -2,7 +2,7 @@ import React from "react"
 
 function Memes(props) {
     return (
-        <div>
+        <div className="memesComponent">
             <div className="singleMemeContainer">
                 <img src={props.choices} name={props.id} width="600" height="600" />
                 <p className="topTextSingleMeme">{props.topText}</p>
