@@ -73,7 +73,7 @@ class App extends React.Component {
         })
     }*/
 
-    selectedMemeText() {
+    /*selectedMemeText() {
 
         let allMemeAndText = {
             topText: this.state.topText,
@@ -87,6 +87,24 @@ class App extends React.Component {
             topText: "",
             bottomText: "",
             selectedMemeAndText: savedMemeAndText
+        })
+    }*/
+
+    selectedMemeText() {
+
+        this.setState((prevState) => {
+
+            let newMemeAndText = {
+                topText: prevState.topText,
+                bottomText: prevState.bottomText,
+                memeKey: prevState.newMeme.id,
+                memeUrl: prevState.newMeme.url
+            }
+            return {
+                topText: "",
+                bottomText: "",
+                selectedMemeAndText: [...prevState.selectedMemeAndText, newMemeAndText]
+            }
         })
     }
 
@@ -147,7 +165,7 @@ class App extends React.Component {
         }
     }*/
 
-    deleteButton(id) {
+    /*deleteButton(id) {
         let search = this.state.selectedMemeAndText
         console.log(id)
         console.log(search)
@@ -160,6 +178,22 @@ class App extends React.Component {
 
         this.setState({
             selectedMemeAndText: search
+        })
+    }*/
+
+    deleteButton(id) {
+
+        this.setState((prevState) => {
+            let newArr = prevState.selectedMemeAndText.filter(function (each) {
+                if (each.memeKey !== id) {
+                    return true
+                } else {
+                    return false
+                }
+            })
+            return {
+                selectedMemeAndText: newArr
+            }
         })
     }
 
